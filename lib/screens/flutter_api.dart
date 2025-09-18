@@ -41,10 +41,14 @@ class _FlutterApiState extends State<FlutterApi> {
 }
 
 
-// If i need to Render this dats in UI We have two Options
-// FutureBuilder   for that  you < return responseBody; > at the of the getPosts Function 
+// If i need to Render this data in UI We have many options
+// FutureBuilder is one of them to best to get APIS  for that you < return responseBody; > from the getPosts Function 
 // ListView.builder 
+// ListTile 
+// Many others
+
+// >> See more files to know more about apis how they work 
 
 
-// We will discuss in Next 
+// We will discuss in Next,
 // Assignemt Chat Application 
