@@ -40,7 +40,7 @@ class _FlutterApiOneState extends State<FlutterApiOne> {
                 return ListTile(
                   leading: CircleAvatar(
                     // Direct API implemented using Listview.Builder and Listtile inside the FutureBuilder
-                    // But this is better way to define APIs in Code and Reusibilty you works but this is not good approch
+                    // But this is not better way to define APIs in Code and Reusibilty you works but this is not good approch
                     child: Text("${snapshot.data[index]['id']}"),
                   ),
                   title: Text(snapshot.data[index]['name']),
