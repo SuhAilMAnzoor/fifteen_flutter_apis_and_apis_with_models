@@ -21,12 +21,7 @@ class _FlutterApiTwoSinglePostModelState
     var url = Uri.https('jsonplaceholder.typicode.com', '/posts/1');
     var response = await http.get(url);
     var responseBody = jsonDecode(response.body);
-    SinglePostModel post = SinglePostModel.fromJson(responseBody);
-    print(post.runtimeType);
-    SinglePostModel post2 = SinglePostModel.fromJson(responseBody);
-    print(post2.runtimeType);
-    print("$post + ${post2}");
-    return post;
+    return (SinglePostModel.fromJson(responseBody));
   }
 
   @override
@@ -39,9 +34,9 @@ class _FlutterApiTwoSinglePostModelState
           AsyncSnapshot<SinglePostModel> snapshot,
         ) {
           if (snapshot.hasData) {
-            // In previous we used ListView.Builder but now we dont need of it, after Post Model implementation
+            // In previous we have been seen that we used ListView.Builder but now in this we dont need of it, after SinglePostModel implementation
             return ListTile(
-              // Use ! if you are 100% sure that data will be null or have respone of API  // This Topic is related Null Safety
+              // Use ! if you are 100% sure that data will be not null or have respone of API  // This Topic is related Null Safety
               leading: CircleAvatar(child: Text("${snapshot.data!.id!}")),
               title: Text(snapshot.data!.title!),
               subtitle: Text(snapshot.data!.body!),
@@ -53,3 +48,16 @@ class _FlutterApiTwoSinglePostModelState
     );
   }
 }
+   // We will see next coming files how these ! (exclamation) ? and question marks
+   // will be removed for better code readability and and avoid null safety
+   // make better models those have null saftey check 
+   // what if API response is not coming due to network or any other reason 
+   // so we do it with handling that is designed in models to conditions using ternary operators
+   // if name field has something issue like API issue or any mistake are done
+   // we handle it like this in way 
+   // title.isEmpty ? name : "";
+   // or 
+   // title = json['title'] ?? "No Title";
+
+   // See Other Files than this file,
+   // and other Models than single_post_model.
