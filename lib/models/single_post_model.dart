@@ -24,5 +24,8 @@ class SinglePostModel {
 }
 
 
-// Only for Single post model
-// applied in this file flutter_api_two_single_post_model.dart
+// This model (Single post model) is applied for
+// file flutter_api_two_single_post_model.dart  and
+// file flutter_api_three_single_posts_model_i.dart
+
+
