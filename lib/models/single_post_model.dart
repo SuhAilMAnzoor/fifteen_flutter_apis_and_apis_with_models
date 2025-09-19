@@ -22,3 +22,7 @@ class SinglePostModel {
     return data;
   }
 }
+
+
+// Only for Single post model
+// applied in this file flutter_api_two_single_post_model.dart
