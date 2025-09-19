@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-// Flutter API One Through Posts Model - Two File  - > Multiple Posts
-// Prevous Was Only Accessing One Post, Class File
-// In this Complete Posts Will be Accessed with the help of for Loop
-// Followed Same post_model.dart  |  No Changes i made for this class file
+// Flutter API Three Through Single Post Model -> Multiple Posts
+// In prevous file i was only accessing one post,
+// In this, all Posts will be fetched and accessed with the help of for Loop
+// Follow Same single_post_model.dart, i have nothing changed in this model
 class FlutterApiThreePostModel extends StatefulWidget {
   const FlutterApiThreePostModel({super.key});
 
@@ -16,9 +16,7 @@ class FlutterApiThreePostModel extends StatefulWidget {
 }
 
 class _FlutterApiThreePostModelState extends State<FlutterApiThreePostModel> {
-  //we can also define getPosts() function type now that is changed from Prevoius one now,  Future<SinglePostModel> getPost()...
-  // i determined this at the end of run time in prevoius class file
-  Future<List<SinglePostModel>> getPostsApi() async {
+  Future<List<SinglePostModel>> getPosts() async {
     List<SinglePostModel> allPosts = [];
     var url = Uri.https('jsonplaceholder.typicode.com', '/posts');
     var response = await http.get(url);
@@ -33,16 +31,15 @@ class _FlutterApiThreePostModelState extends State<FlutterApiThreePostModel> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: getPostsApi(),
+        future: getPosts(),
         builder: ((
           BuildContext context,
           AsyncSnapshot<List<SinglePostModel>> snapshot,
         ) {
           if (snapshot.hasData) {
-            final data = snapshot.data!;
             return ListView(
               children:
-                  data.map((post) {
+                  snapshot.data!.map((post) {
                     return ListTile(
                       leading: CircleAvatar(child: Text("${post.id}")),
                       title: Text(post.title ?? "No Title"),
