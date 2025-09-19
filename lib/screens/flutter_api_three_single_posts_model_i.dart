@@ -42,7 +42,7 @@ class _FlutterApiThreePostModelState extends State<FlutterApiThreePostModel> {
             return SingleChildScrollView(
               child: Column(
                 children: [
-                  for (var i = 0; i < snapshot.data!.length!; i++)
+                  for (var i = 0; i < snapshot.data!.length; i++)
                     ListTile(
                       // Use ! if you are 100% sure that data will be null or have respone of API  // This Topic is related Null Safety
                       leading: CircleAvatar(
