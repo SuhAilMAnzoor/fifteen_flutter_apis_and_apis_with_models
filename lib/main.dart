@@ -3,6 +3,7 @@ import 'package:fifteen_flutter_apis/screens/flutter_api.dart';
 import 'package:fifteen_flutter_apis/screens/flutter_api_one.dart';
 import 'package:fifteen_flutter_apis/screens/flutter_api_two_single_post_model.dart';
 import 'package:fifteen_flutter_apis/screens/flutter_api_three_single_posts_model_i.dart';
+import 'package:fifteen_flutter_apis/screens/fluttr_api_four_new_psotModel.dart';
 
 // These Are Methods of API
 // GET    >> Fetch the API
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const FlutterApiThreePostModel(),
+      home: const FlutterApiFourPostModelRecommended(),
     );
   }
 }
