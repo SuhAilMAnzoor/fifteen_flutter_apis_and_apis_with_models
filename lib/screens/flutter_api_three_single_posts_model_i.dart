@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 // Flutter API One Through Posts Model - Two File  - > Multiple Posts
 // Prevous Was Only Accessing One Post, Class File
 // In this Complete Posts Will be Accessed with the help of for Loop
-// Followed Same post_model.dart  |  No Changes i made for this class file
+// Followed Same post_model.dart | No Changes i made for this class file
 class FlutterApiThreePostModel extends StatefulWidget {
   const FlutterApiThreePostModel({super.key});
 
