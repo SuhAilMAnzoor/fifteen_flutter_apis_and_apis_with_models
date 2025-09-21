@@ -26,7 +26,9 @@ class _FlutterApiOneThroughNewPostModelRecommendedState
 
       // Use map to convert each item to PostModel
       return (responseBody as List)
-          .map((json) => PostModel.fromJson(json))
+          .map(
+            (json) => PostModel.fromJson(json),
+          ) // here we can also use for in loop
           .toList();
     }
   }
