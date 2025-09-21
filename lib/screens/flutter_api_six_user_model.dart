@@ -1,19 +1,16 @@
 import 'dart:convert';
-
-import 'package:fifteen_flutter_apis/models/best_user_model.dart';
 import 'package:flutter/material.dart';
+import 'package:fifteen_flutter_apis/models/best_user_model.dart';
 import 'package:http/http.dart' as http;
 
-class FlutterApiOneThroghUserModel extends StatefulWidget {
-  const FlutterApiOneThroghUserModel({super.key});
+class FlutterApiSixUserModel extends StatefulWidget {
+  const FlutterApiSixUserModel({super.key});
 
   @override
-  State<FlutterApiOneThroghUserModel> createState() =>
-      _FlutterApiOneThroghUserModelState();
+  State<FlutterApiSixUserModel> createState() => _FlutterApiSixUserModelState();
 }
 
-class _FlutterApiOneThroghUserModelState
-    extends State<FlutterApiOneThroghUserModel> {
+class _FlutterApiSixUserModelState extends State<FlutterApiSixUserModel> {
   Future<List<UserModel>> getUsers() async {
     List<UserModel> allUsers = [];
     var url = Uri.https('jsonplaceholder.typicode.com', '/users');
@@ -44,13 +41,17 @@ class _FlutterApiOneThroghUserModelState
 
             if (snapshot.hasData) {
               return ListView.builder(
-                itemCount: snapshot.data?.length,
+                itemCount: snapshot.data!.length,
                 itemBuilder: (BuildContext context, index) {
                   var allUsers = snapshot.data![index];
                   return Card(
                     shadowColor: Colors.grey,
                     child: ListTile(
-                      leading: CircleAvatar(child: Text("${allUsers.id}")),
+                      leading: CircleAvatar(
+                        child: Text(
+                          "${snapshot.data![index].id}",
+                        ), //for Learning Purpose
+                      ),
                       title: Text(
                         allUsers.name.isEmpty
                             ? "No Name"
